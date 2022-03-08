@@ -170,12 +170,12 @@ const PlayGameRoom = async (req, res, next) => {
     if (foundRoom.player_1_choices && foundRoom.player_2_choices) {
 
       // user history
-      const user1History = await User_History.findOne({
+      const user1History = await GameHistory.findOne({
         where: {
           user_uuid: foundRoom.player_1_uuid
         }
       })
-      const user2History = await User_History.findOne({
+      const user2History = await GameHistory.findOne({
         where: {
           user_uuid: foundRoom.player_2_uuid
         }
